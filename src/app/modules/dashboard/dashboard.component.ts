@@ -73,13 +73,6 @@ export class DashboardComponent implements OnInit {
         }],
       };
 
-        // tslint:disable-next-line: no-string-literal
-      //  this.chartOptions['series'][0].data[0]['y'] = this.input1;
-        // tslint:disable-next-line: no-string-literal
-     //   this.chartOptions['series'][0].data[1]['y'] = this.input2;
-      // tslint:disable-next-line: no-string-literal
-
-       // this.chartOptions['series'][0].data[2]['y'] = this.total;
        // tslint:disable-next-line: no-string-literal
         console.log(this.chartOptions['series'][0].data[0]['y']);
        // tslint:disable-next-line: no-string-literal
