@@ -1,4 +1,4 @@
-# Angular Pie Chart
+# Angular Basic Icon Picker
 
 
 
