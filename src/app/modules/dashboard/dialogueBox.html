@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>Choose an icon</h1>
+
+<div class="container-fluid">
+  <div class="row ">
+
+ <div class="col centered"  title="alarm" (click)="changeIcon('icofont icofont-alarm')">
+  <div class="icon-item-inner-container" style="float:none;margin:auto;">
+
+    <mat-icon>  <span _ngcontent-ism-c19="" class="icofont icofont-alarm" ></span> </mat-icon>
+
+    <span _ngcontent-ism-c22="" class="icon-item-title">Alarm</span>
+  </div>
+</div>
+
+<div class="col centered" title="Android" (click)="changeIcon('icofont icofont-brand-android-robot')">
+  <div class="icon-item-inner-container" >
+
+    <mat-icon>  <span _ngcontent-ism-c19="" class="icofont icofont-brand-android-robot" ></span> </mat-icon>
+
+    <span _ngcontent-ism-c22="" class="icon-item-title">Android</span>
+  </div>
+</div>
+
+<div class="col centered" title="android" (click)="changeIcon('android')">
+  <div class="icon-item-inner-container centered" >
+
+      <span _ngcontent-ism-c19="" class="material-icons icon-image-preview centered" >android</span>
+
+    <span _ngcontent-ism-c22="" class="icon-item-title">Android</span>
+  </div>
+</div>
+
+ <!--<div><mat-icon (click)="changeIcon('android')"></mat-icon></div>-->
+<div class="col centered" title="alarm" (click)="changeIcon('alarm')">
+  <div class="icon-item-inner-container">
+
+      <span  _ngcontent-ism-c19="" class="material-icons icon-image-preview" >alarm</span>
+
+    <span _ngcontent-ism-c22="" class="icon-item-title">Alarm</span>
+  </div>
+</div>
+</div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

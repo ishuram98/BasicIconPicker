@@ -15,9 +15,16 @@ export class DashboardService {
   public result = new Subject <Values>();
   result$ = this.result.asObservable();
 
+  public resultIcon = new Subject<string>();
+  resultI$ = this.resultIcon.asObservable();
+
   constructor() { }
   sendResult(values: Values): void{
     this.result.next(values);
+  }
+
+  sendIcon(val: string): void{
+    this.resultIcon.next(val);
   }
 
 }

@@ -12,6 +12,7 @@ import { FlexLayoutModule} from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule} from '@angular/forms';
 import {HighchartsChartModule} from 'highcharts-angular';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {HighchartsChartModule} from 'highcharts-angular';
     MatMenuModule,
     MatCardModule,
     FormsModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    MatDialogModule
   ],
   exports: [
     HeaderComponent,

@@ -2,6 +2,7 @@ import { DashboardService } from 'src/app/modules/dashboard/dashboard.service';
 import { Component, OnInit} from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,8 +16,11 @@ export class DashboardComponent implements OnInit {
   input1: number;
   input2: number;
   total: number;
+  public icon ;
+  // public val = 'icofont icofont-airplane';
+  public val;
 
-  constructor(private dashboardService: DashboardService) { }
+  constructor(private dashboardService: DashboardService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.dashboardService.result$.subscribe(
@@ -89,9 +93,46 @@ export class DashboardComponent implements OnInit {
           new Event('resize')
         );
       }, 300);
+
     }
     );
+    this.dashboardService.resultI$.subscribe(
+      (iconn) => {
+        if (iconn.search('icofont') === -1){
+          console.log(this.icon);
+          this.icon = iconn;
+          this.val = iconn;
+        }
+        else{
+          this.icon = '';
+          this.val = iconn;
+        }
+      });
 
+    this.PieChart();
+  }
+
+  public changeIcon(newIcon: string): void {
+    this.dashboardService.resultI$.subscribe(
+      (iconn) => {
+        this.val = iconn;
+      });
+    // this.val = newIcon;
+    // this.icon = newIcon;
+}
+public changeIconn(newIcon: string): void {
+
+  // this.val = newIcon;
+   this.icon = newIcon;
+}
+
+openDialog(): void {
+  this.dialog.open(DialogElementsExampleDialog, {
+    width: '300px', height: '250px',
+  });
+}
+
+  PieChart(): void {
     this.chartOptions = {
       chart: {
         plotBackgroundColor: null,
@@ -150,4 +191,21 @@ export class DashboardComponent implements OnInit {
 
   }
 
+}
+
+@Component({
+  selector: 'app-dialog-box',
+  templateUrl: 'dialogueBox.html',
+  styleUrls: ['dialogueBoxCss.css']
+})
+// tslint:disable-next-line: component-class-suffix
+export class DialogElementsExampleDialog {
+  public ficon: string;
+
+  constructor(private dashboardService: DashboardService, public dialog: MatDialog) { }
+
+  public changeIcon(newIcon: string): void {
+    this.ficon = newIcon;
+    this.dashboardService.sendIcon(this.ficon);
+}
 }

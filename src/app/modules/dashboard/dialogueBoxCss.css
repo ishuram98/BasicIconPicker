@@ -1,0 +1,12 @@
+mat-card {
+  width:200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.centered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}

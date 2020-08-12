@@ -13,6 +13,8 @@
 
 
 mat-card {
+  width:150px;
+  height: 70px;
   display: block;
   margin: 0 auto;
 }
